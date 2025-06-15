@@ -1,0 +1,58 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+    --color-primary-green: #225b48;
+    --color-secondary-green: #3a9778;
+    --color-shiny-green: #4bd3a6;
+    --color-soft-green: #e8f5f0;
+
+    --color-grey: #f9f6ef;
+    --color-black: #0c0c0c;
+
+    --font-alexandria: "Alexandria", sans-serif;
+    --font-noto: "Noto Nastaliq Urdu", serif;
+
+    --shadow-3xl: 0px 0px 20px 10px rgba(0, 0, 0, 0.35);
+}
+
+html { direction: rtl; }
+
+* {
+    font-family: "Alexandria", sans-serif;
+}
+
+@layer components {
+    .dark-overlay {
+        @apply before:absolute before:w-full before:h-full before:bg-black/50 before:backdrop-blur-[2px];
+    }
+
+    .dark-overlay-on-hover {
+        @apply before:absolute before:w-full before:h-full before:bg-black/50 before:backdrop-blur-[2px] before:opacity-0 before:duration-500 hover:before:opacity-100;
+    }
+
+    .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .hide-scrollbar::-webkit-scrollbar { display: none }
+
+    .ellipsis-text {
+        @apply whitespace-nowrap overflow-hidden text-ellipsis;
+    }
+}
+
+@utility flex-center-all {
+    @apply flex items-center justify-center;
+}
+
+@utility flex-center-between {
+    @apply flex items-center justify-between;
+}
+
+@utility bg-image-settings {
+    @apply bg-center bg-no-repeat bg-cover;
+}
