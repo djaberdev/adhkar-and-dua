@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import CategoryInfo from "./CategoryInfo";
 import { Collapse } from "react-collapse";
 
-const Header = ({ toggleSidebar, category, timeToSay, encouragement }) => {
+const Header = ({ category, timeToSay, encouragement }) => {
 
     const [isCollapsed, setIsCollapsed] = useState(false);
 
@@ -20,13 +20,14 @@ const Header = ({ toggleSidebar, category, timeToSay, encouragement }) => {
                         <i className="ri-home-4-line text-2xl text-primary-green"></i>
                     </Link>
 
-                    <button
+                    {/* Stoped because of an issue in the production */}
+                    {/* <button
                         className="translate-y-1.5 flex-center-all w-[45px] h-[45px] rounded-md bg-soft-green/95 duration-300 hover:bg-soft-green active:scale-[0.96] cursor-pointer"
                         title="إعـرض/إخـفي القـائمة الجـانبية"
                         onClick={toggleSidebar}
                     >
                         <i className="ri-menu-3-line text-2xl text-primary-green"></i>
-                    </button>
+                    </button> */}
                     
                     <button
                         className="translate-y-1.5 flex-center-all w-[45px] h-[45px] rounded-md bg-soft-green/95 duration-300 hover:bg-soft-green active:scale-[0.96] cursor-pointer"

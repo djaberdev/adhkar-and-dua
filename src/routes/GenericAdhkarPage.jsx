@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useContext } from "react";
+import { useEffect, useRef, useContext } from "react";
 import { useLocation } from "react-router";
 import { DataContext } from "../context/DataContext";
 import { Header, DhikrCard, Sidebar } from "../components";
@@ -10,7 +10,8 @@ const GenericAdhkarPage = ({ link, category, timeToSay, encouragement }) => {
     const data = useContext(DataContext);
     const specificAdhkar = data ? data[category] : [];
 
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    {/* Stoped because of an issue in the production */}
+    // const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     const location = useLocation();
     const prevPathRef = useRef(location.pathname);
@@ -26,8 +27,14 @@ const GenericAdhkarPage = ({ link, category, timeToSay, encouragement }) => {
 
     return (
         <section className="relative min-h-screen w-full max-w-[768px] mx-auto border-dashed border-2 border-t-0 border-b-0 max-md:border-0 border-[#aaa] overflow-x-hidden">
-            <Header toggleSidebar={() => setIsSidebarOpen(prev => !prev)} category={category} timeToSay={timeToSay} encouragement={encouragement} />
-            <Sidebar isOpen={isSidebarOpen} />
+            <Header
+                // toggleSidebar={() => setIsSidebarOpen(prev => !prev)} 
+                category={category} 
+                timeToSay={timeToSay} 
+                encouragement={encouragement} 
+            />
+            {/* Stoped because of an issue in the production */}
+            {/* <Sidebar isOpen={isSidebarOpen} /> */}
 
             <div className="flex flex-col items-center gap-5 px-5 my-6">
                 {data 
