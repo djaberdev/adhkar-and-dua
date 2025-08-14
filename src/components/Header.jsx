@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import CategoryInfo from "./CategoryInfo";
-import { SlideDown } from "react-slidedown";
-import "react-slidedown/lib/slidedown.css";
+import { Collapse } from "react-collapse";
 
 const Header = ({ toggleSidebar, category, timeToSay, encouragement }) => {
 
@@ -49,13 +48,11 @@ const Header = ({ toggleSidebar, category, timeToSay, encouragement }) => {
                     </button>
                 </div>
             </div>
-            <SlideDown>
-                {isCollapsed && (
-                    <div className="p-1">
-                        <CategoryInfo TTS={timeToSay} En={encouragement} />
-                    </div>  
-                )}
-            </SlideDown>
+            <Collapse isOpened={isCollapsed}>
+                <div className="p-1">
+                    <CategoryInfo TTS={timeToSay} En={encouragement} />
+                </div>  
+            </Collapse>
         </header>
     );
 };

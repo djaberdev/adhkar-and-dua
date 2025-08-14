@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import checked from "../assets/checked.png";
-import { SlideDown } from "react-slidedown";
-import "react-slidedown/lib/slidedown.css";
+import { Collapse } from "react-collapse";
 import clsx from "clsx";
 
 const DhikrCard = ({ dhikrObject, uniqueKey }) => {
@@ -48,7 +47,7 @@ const DhikrCard = ({ dhikrObject, uniqueKey }) => {
                 </p>
                 
 
-                <div className={"bg-primary-green/90 p-2 rounded-full flex items-center gap-2 mt-6 duration-500 cursor-auto mb-5"}>
+                <div className={"bg-primary-green/90 p-2 rounded-full flex items-center gap-2 mt-6 duration-500 cursor-auto mb-4"}>
                     <button
                         className={clsx("flex-center-all w-[45px] h-[45px] rounded-full bg-soft-green duration-300 hover:bg-shiny-green/50 cursor-pointer group active:scale-[0.95] overflow-hidden", isTextCopied && "w-[128px]")}
                         title="نــسخ النص"
@@ -90,20 +89,18 @@ const DhikrCard = ({ dhikrObject, uniqueKey }) => {
                     </button>
                 </div>
 
-                <SlideDown className={clsx("bg-secondary-green/25 rounded-lg border-b-0 border-secondary-green/30 shadow-sm")}>
-                    {isInfoOpen && (
-                        <div className="space-y-2.5 p-3">
-                            <div className="flex items-start gap-2.5">
-                                <span className="py-1.5 px-3 text-[13px] text-grey bg-primary-green rounded-full">المــصـدر</span>
-                                <p className="text-[14.5px] leading-[1.6] translate-y-1">{dhikrObject.reference ? dhikrObject.reference : "غير محدد"}</p>
-                            </div>
-                            <div className="flex items-start gap-2.5">
-                                <span className="py-1.5 px-3 text-[13px] text-grey bg-primary-green rounded-full">الشــرح</span>
-                                <p className="text-[14.5px] leading-[1.6] translate-y-1">{dhikrObject.description ? dhikrObject.description : "غير محدد"}</p>
-                            </div>
+                <Collapse isOpened={isInfoOpen}>
+                    <div className="bg-secondary-green/25 border-1 border-b-0 border-secondary-green/30 rounded-lg space-y-2.5 p-3 shadow-sm"> 
+                        <div className="flex items-start gap-2.5">
+                            <span className="py-1.5 px-3 text-[13px] text-grey bg-primary-green rounded-full">المــصـدر</span>
+                            <p className="text-[14.5px] leading-[1.6] translate-y-1">{dhikrObject.reference ? dhikrObject.reference : "غير محدد"}</p>
                         </div>
-                    )}
-                </SlideDown>
+                        <div className="flex items-start gap-2.5">
+                            <span className="py-1.5 px-3 text-[13px] text-grey bg-primary-green rounded-full">الشــرح</span>
+                            <p className="text-[14.5px] leading-[1.6] translate-y-1">{dhikrObject.description ? dhikrObject.description : "غير محدد"}</p>
+                        </div>
+                    </div>
+                </Collapse>
             </div>
         </div>
     );

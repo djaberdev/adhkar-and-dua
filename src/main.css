@@ -56,3 +56,8 @@ html { direction: rtl; }
 @utility bg-image-settings {
     @apply bg-center bg-no-repeat bg-cover;
 }
+
+/* For React Collapse */
+.ReactCollapse--collapse {
+    transition: height 500ms;
+}
