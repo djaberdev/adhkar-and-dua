@@ -31,7 +31,7 @@ html { direction: rtl; }
     }
 
     .dark-overlay-on-hover {
-        @apply before:absolute before:w-full before:h-full before:bg-black/50 before:backdrop-blur-[2px] before:opacity-0 before:duration-500 hover:before:opacity-100;
+        @apply before:absolute before:w-full before:h-full before:z-1 before:bg-black/50 before:backdrop-blur-[2px] md:before:opacity-0 before:duration-500 hover:before:opacity-100;
     }
 
     .hide-scrollbar {

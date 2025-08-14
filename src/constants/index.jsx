@@ -4,10 +4,21 @@ import {
     sleepIcon,
     wakeIcon,
     prayerIcon,
-    tasbihIcon,
+    tasbeehIcon,
     quranIcon,
     prophetsIcon,
 } from "../assets/icons";
+
+import {
+    morningBG,
+    eveningBG,
+    sleepBG,
+    prayerBG,
+    quranBG,
+    prophetsBG,
+    wakeBG,
+    tasbeehBG
+} from "../assets/cards-background";
 
 export const hijriMonths = [
     "محرم",
@@ -31,6 +42,7 @@ export const categories = [
         timeToSay: "بعد صلاة الفجر حتى شروق الشمس",
         encouragement: "ابدأ يومك بذكر الله، ليمنحك راحة وطمأنينة.",
         icon: morningIcon,
+        bg: morningBG,
     },
     {
         category: "أذكار المساء",
@@ -38,6 +50,7 @@ export const categories = [
         timeToSay: "بعد صلاة العصر حتى غروب الشمس",
         encouragement: "اختتم يومك بطمأنينة القلب ورضا الله.",
         icon: eveningIcon,
+        bg: eveningBG,
     },
     {
         category: "أذكار النوم",
@@ -45,6 +58,7 @@ export const categories = [
         timeToSay: "قبل النوم مباشرة",
         encouragement: "نم وقلبك مطمئن بذكر الله.",
         icon: sleepIcon,
+        bg: sleepBG,
     },
     {
         category: "أذكار الاستيقاظ",
@@ -52,6 +66,7 @@ export const categories = [
         timeToSay: "عند الاستيقاظ من النوم",
         encouragement: "ابدأ صباحك بشكر الله على نعمة الحياة.",
         icon: wakeIcon,
+        bg: wakeBG,
     },
     {
         category: "أذكار بعد السلام من الصلاة المفروضة",
@@ -59,13 +74,15 @@ export const categories = [
         timeToSay: "بـعد الانتــهاء من كـل صــلاة مكتــوبة كالظهــر",
         encouragement: "اِختــم صلاتـك بذكر الـلّـه لتُحفـظ وتُزاد حسنـاتك.",
         icon: prayerIcon,
+        bg: prayerBG,
     },
     {
         category: "تسابيح",
         link: "tasabih",
         timeToSay: "",
         encouragement: "التسبيح يرفع درجاتك ويثقل ميزان حسناتك.",
-        icon: tasbihIcon,
+        icon: tasbeehIcon,
+        bg: tasbeehBG,
     },
     {
         category: "أدعية قرآنية",
@@ -73,6 +90,7 @@ export const categories = [
         timeToSay: "",
         encouragement: "استعن بأدعية القرآن، فهي نور وهداية.",
         icon: quranIcon,
+        bg: quranBG,
     },
     {
         category: "أدعية الأنبياء",
@@ -80,5 +98,6 @@ export const categories = [
         timeToSay: "",
         encouragement: "اتبع أثر الأنبياء وتعلم من دعائهم.",
         icon: prophetsIcon,
+        bg: prophetsBG,
     }
 ];

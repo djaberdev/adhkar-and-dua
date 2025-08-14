@@ -3,7 +3,7 @@ import eveningIcon from "./evening.png";
 import sleepIcon from "./sleep.png";
 import wakeIcon from "./wake.png";
 import prayerIcon from "./prayer.png";
-import tasbihIcon from "./tasbih.png";
+import tasbeehIcon from "./tasbeeh.png";
 import quranIcon from "./quran.png";
 import prophetsIcon from "./prophets.png";
 
@@ -13,7 +13,7 @@ export {
     sleepIcon,
     wakeIcon,
     prayerIcon,
-    tasbihIcon,
+    tasbeehIcon,
     quranIcon,
     prophetsIcon,
 };

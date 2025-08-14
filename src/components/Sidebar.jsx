@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 const Sidebar = ({ isOpen }) => {
     return (
-        <aside className={clsx("absolute top-0 -right-full w-0 z-5 h-fit rounded-bl-2xl bg-primary-green shadow-3xl overflow-y-auto hide-scrollbar duration-800", isOpen && "right-0 w-2/4 max-sm:w-[62%]")}>
+        <aside className={clsx("absolute top-0 -right-full w-0 z-5 h-fit rounded-bl-2xl bg-primary-green shadow-3xl overflow-y-auto hide-scrollbar duration-1200", isOpen && "right-0 w-2/4 max-sm:w-[62%]")}>
             <div className="p-6 flex flex-col gap-5">
                 {categories.map(({ category, link, icon }) => (
                     <Link
