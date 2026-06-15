@@ -61,3 +61,26 @@ html { direction: rtl; }
 .ReactCollapse--collapse {
     transition: height 500ms;
 }
+
+.preloader {
+    will-change: clip-path, opacity;
+}
+
+/* For Advanced Dhikr */
+.hide_CP {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+}
+
+.show_CP {
+    clip-path: polygon(0 100%, 100% 100%, 100% 0%, 0% 0%);
+}
+
+.mask-grid {
+    mask-image: radial-gradient(black 50%, transparent 60%);
+}
+
+/* General */
+.disabled-btn {
+    opacity: 0.45;
+    pointer-events: none;
+}

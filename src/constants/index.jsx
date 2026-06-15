@@ -101,3 +101,5 @@ export const categories = [
         bg: prophetsBG,
     }
 ];
+
+// Used for Animations

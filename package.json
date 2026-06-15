@@ -10,14 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@tailwindcss/vite": "^4.1.8",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.23.26",
     "hijri-date": "^0.2.2",
     "react": "^19.1.0",
     "react-collapse": "^5.1.1",
     "react-dom": "^19.1.0",
     "react-router": "^7.6.2",
-    "tailwindcss": "^4.1.8"
+    "remixicon": "^4.9.1",
+    "tailwindcss": "^4.1.8",
+    "valtio": "^2.3.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",

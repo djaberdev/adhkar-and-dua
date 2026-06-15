@@ -3,12 +3,17 @@ import checked from "../assets/checked.png";
 import { Collapse } from "react-collapse";
 import clsx from "clsx";
 
+import { state } from "../store";
+
 const DhikrCard = ({ dhikrObject, uniqueKey }) => {
 
     const [isInfoOpen, setIsInfoOpen] = useState(false);
     const [dhikrCount, setDhikrCount] = useState(Number(dhikrObject.count));
     const [isDhikrFinish, setIsDhikrFinish] = useState(false);
     const [isTextCopied, setIsTextCopied] = useState(false);
+
+    const [isAdvancedAllowed, setIsAdvancedAllowed] = useState(true);
+    const [isSimpleAllowed, setIsSimpleAllowed] = useState(true);
 
     // Restore The Finish State From The sessionStorage 
     useEffect(() => {
@@ -34,7 +39,8 @@ const DhikrCard = ({ dhikrObject, uniqueKey }) => {
         <div 
             className={clsx("w-full relative bg-secondary-green/25 rounded-xl border-2 border-b-0 border-secondary-green/35 shadow-sm duration-500 hover:bg-secondary-green/32")}
         >
-            <div className={clsx("flex-center-all absolute top-1/2 left-1/2 -translate-1/2 h-full bg-black/60 backdrop-blur-xl z-2 rounded-xl duration-500 cursor-auto select-none w-0 scale-[0.6] opacity-0 invisible", isDhikrFinish && "w-full scale-[1] opacity-100 visible")}>
+            {/* Indicate Dhikr Finish */}
+            <div className={clsx(`finish-cover-${uniqueKey} flex-center-all absolute top-1/2 left-1/2 -translate-1/2 h-full bg-black/60 backdrop-blur-xl z-2 rounded-xl duration-500 cursor-auto select-none w-0 scale-[0.6] opacity-0 invisible`, isDhikrFinish && `w-full scale-[1] opacity-100 visible`)}>
                 <div className="flex flex-col items-center gap-3.5 text-center">
                     <img src={checked} alt="checked" width={60} />
                     <p className="text-lg text-grey">لــقد أنـــهيتَ هـذا الذكــر</p>
@@ -47,10 +53,33 @@ const DhikrCard = ({ dhikrObject, uniqueKey }) => {
                 </p>
                 
 
-                <div className={"bg-primary-green/90 p-2 rounded-full flex items-center gap-2 mt-6 duration-500 cursor-auto mb-4"}>
+                <div className={"bg-primary-green/90 p-2 rounded-full flex items-center gap-2 mt-6 duration-500 cursor-auto mb-4 max-sm:flex-wrap max-sm:rounded-xl max-sm:justify-center"}>
+                    {/* Want Tasbeeh ! */}
+                    <button 
+                        className={clsx("flex-center-all w-[45px] h-[45px] rounded-full bg-soft-green duration-300 hover:bg-shiny-green cursor-pointer", !isAdvancedAllowed && "disabled-btn")}
+                        title="انـتـقـل للـذكـر المتـطـور"
+                        onMouseEnter={() => {
+                            state.isTasbeehWanted = true;
+                        }}
+                        onMouseLeave={() => {
+                            state.isTasbeehWanted = false;
+                        }}
+                        onClick={() => {
+                            state.TasbeehInfo = dhikrObject;
+                            state.TasbeehInfo.uniqueKey = uniqueKey;
+                            state.isTasbeehConfirmed = true;
+
+                            document.querySelector(".advanced-dhikr").classList.replace("hide_CP", "show_CP");
+
+                            setIsSimpleAllowed(false);
+                        }}
+                    >
+                        <i class="ri-focus-3-line text-[24px]"></i>
+                    </button>
+
                     <button
-                        className={clsx("flex-center-all w-[45px] h-[45px] rounded-full bg-soft-green duration-300 hover:bg-shiny-green/50 cursor-pointer group active:scale-[0.95] overflow-hidden", isTextCopied && "w-[128px]")}
-                        title="نــسخ النص"
+                        className="flex-center-all w-[45px] h-[45px] rounded-full bg-soft-green duration-300 hover:bg-shiny-green/50 cursor-pointer group active:scale-[0.95] overflow-hidden"
+                        title="نــسخ النــص"
                         onClick={() => {
                             window.navigator.clipboard.writeText(dhikrObject.content.split(/[\\n,'\n']+/).filter(Boolean).join(''));
                             setIsTextCopied(true);
@@ -59,7 +88,6 @@ const DhikrCard = ({ dhikrObject, uniqueKey }) => {
                     >
                         <div className={clsx("flex items-center duration-300", isTextCopied && "gap-2")}>
                             <i className={clsx("text-[22px] duration-300 group-hover:text-grey", isTextCopied ? "ri-check-fill" : "ri-file-copy-line")}></i>
-                            <p className={clsx("text-[15px] duration-300 group-hover:text-grey whitespace-nowrap w-0 scale-x-0 opacity-0", isTextCopied && "w-fit scale-x-100 opacity-100")}>تـم النــسخ</p>
                         </div>
                     </button>
 
@@ -72,12 +100,16 @@ const DhikrCard = ({ dhikrObject, uniqueKey }) => {
                     </button>
 
                     <button 
-                        className="flex-1 flex-center-all gap-2 bg-soft-green h-[45px] rounded-full duration-450 cursor-pointer hover:bg-soft-green/96 active:scale-[0.96] select-none"
-                        onClick={() => setDhikrCount(prev => prev > 0 && prev - 1)}
+                        className={clsx("flex-1 flex-center-all gap-2 bg-soft-green h-[45px] rounded-full duration-450 cursor-pointer hover:bg-soft-green/96 active:scale-[0.96] select-none", !isSimpleAllowed && "disabled-btn")}
+                        onClick={() => {
+                            setDhikrCount(prev => prev > 0 && prev - 1);
+                            
+                            if (dhikrObject.count > 1) setIsAdvancedAllowed(false); 
+                        }}
                         title="تــكرار الذكــر"
                     >
-                        <p className="text-[17px]">تــكرار</p>
-                        <span className={clsx("w-[33px] h-[33px] rounded-full bg-primary-green flex-center-all text-grey", dhikrCount === 100 && "w-[40px]")}>{dhikrCount}</span>
+                        <p className="text-[17px] max-sm:hidden">تــكرار</p>
+                        <span className={clsx("w-[33px] h-[33px] rounded-full bg-primary-green flex-center-all text-grey", dhikrCount === 100 && "w-[45px] h-[32px]")}>{dhikrCount}</span>
                     </button>
 
                     <button
