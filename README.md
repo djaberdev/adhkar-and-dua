@@ -47,10 +47,10 @@
 <!-- What Learn from that Project -->
 ## 🧠&nbsp; What I Learned 
 
-① `Thing` → ...
+① **`Master React + SessionStorage`** → Let me provide the `Temporary Data Saving` Feature in a Seamless and Advanced Way.
 
-② `Thing` → ...
+② **`Master React + FetchAPI`** → The core of the app is the Showen Data, that comes originaly from an open-source API.
 
-③ `Thing` → ...
+③ **`Get Correct Hijri Time`** → Let me provide the app with an `Islamic Time` Clock support since it's an arabic & islamic app.
 
-④ `Thing` → ...
+④ **`Master Preloader Animation`** → Enhance the `UX` with a Smooth Animation that runs ones on page's first loads.
