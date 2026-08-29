@@ -22,9 +22,9 @@
 
 <!-- Project Type -->
 <p align="center">
-  <img src="https://img.shields.io/badge/Type-Web%20Application-3a4096?style=for-the-badge" alt="Project Type" /> 
-  <img src="https://img.shields.io/badge/Islamic-467f90?style=for-the-badge" alt="Additional Information" /> 
-  <img src="https://img.shields.io/badge/Arabic-467f90?style=for-the-badge" alt="Additional Information" /> 
+  <img src="https://img.shields.io/badge/Type-Web%20Application-3d9678?style=for-the-badge" alt="Project Type" /> 
+  <img src="https://img.shields.io/badge/Islamic-e5d335?style=for-the-badge" alt="Additional Information" /> 
+  <img src="https://img.shields.io/badge/Arabic-c6c6c6?style=for-the-badge" alt="Additional Information" /> 
 </p>
 
 <!-- Project Overview & Desc.. -->
@@ -36,11 +36,6 @@
 ◈ `Feature` → ...
 
 ◈ `Feature` → ...
-
-<br />
-
-<!-- Real Showcase-->
-## 🎬&nbsp; Demo & Showcase
 
 <br />
 
