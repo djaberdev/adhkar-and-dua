@@ -28,14 +28,26 @@
 </p>
 
 <!-- Project Overview & Desc.. -->
-## 📝&nbsp; About **...**
-⇨ ...
+## 📝&nbsp; About **The App**
+⇨ Professional Islamic `Web Application` designed to to help muslims read their important adhkar and dua through a **modern, responsive and interactive interface,** with a strong focus on **UI/UX**, **Data saving**, and **Great content organisation**.
 
-◈ `Feature` → ...
+◈ **`Fully Responsive`** → Ensures flawless Responsiveness across all devices and screen sizes.
 
-◈ `Feature` → ...
+◈ **`Optimized Performance`** → Built for fast loading and an optimized experience.
 
-◈ `Feature` → ...
+◈ **`Clean Design & UX-Friendly`** → Not like the majority of islamic web-apps, This App is Realy Beuatiful thanks to **Co-ordinated Colors, Cool Hover Effects, Smooth Animations, Efficient Layout,...**
+
+◈ **`Smart Data Fetching`** → I use the `React Context`, to get Data from an islamic open-source API ones and share it across the pages.
+
+◈ **`SessionStorage Save Data`** → Stay relaxed! &nbsp; when you use the app and making Progress, Your Data will be saved Automatically in an Advanced Way using `Unique-Key`
+
+◈ **`Advanced Arabic Clock`** → Engange the app with an `Islamic & Arabic Clock`. That get updated Automatically and support `Hijri-Time`
+
+◈ **`Seamless Navigation`** → The app provides a smooth navigation between pages in a Clean UI.
+
+◈ **`Not Just Content`** → Content Cards are packed with advanced Functionalities like: **Copy Text, Finish BTN, Real Counter, Info Opener and Advanced Dhikr Toggler**
+
+◈ **`Professional Dhikr Functionalities`** → The user can use **Card's Dynamic Counter,** **Finish Killer BTN** or **Advanced and Animated Pannel**
 
 <br />
 
